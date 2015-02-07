@@ -1,0 +1,6 @@
+Map = {
+	locations : {
+		"nowhere" : {
+		}
+	}
+};

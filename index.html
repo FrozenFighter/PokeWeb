@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pok&eacute;ngine Pocket Monsters</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="scripts/load-script.js"></script>
+    <script type="text/javascript" src="https://w.soundcloud.com/player/api.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="progress-container" data-build="0.070_04">
+        <div id="progress-bar">
+            <div id="progress-value"></div>
+        </div>
+    </div>
+    <div id="scene">
+        <div id="sky-day" class="sky"></div>
+        <div id="sky-night" class="sky">
+            <div id="stars"></div>
+        </div>
+        <div id="cloud-1" class="cloud"></div>
+        <div id="cloud-2" class="cloud"></div>
+        <div id="cloud-3" class="cloud"></div>
+        <div id="grass"></div>
+    </div>
+    <div id="motd-container">
+        <div id="motd-inner"></div>
+    </div>
+    <div id="chat-container">
+        <div id="chat-users"></div>
+        <div id="chat-channels"></div>
+        <div id="chat-chats">
+            <div id="chat-chat"></div>
+        </div>
+        <div style="padding:4px 18px 0 0">
+            <input type="text" id="chat-input" maxlength="512">
+        </div>
+    </div>
+    <div id="game">
+		<canvas id="game-map2D"></canvas>
+		<canvas id="game-map3D"></canvas>
+		<canvas id="game-battle"></canvas>
+		<canvas id="game-lighting"></canvas>
+		<canvas id="game-fade" data-color="#141414"></canvas>
+		<canvas id="game-textbox"></canvas>
+	</div>
+    <div id="widgets"></div>
+    <div id="resources">
+        <div id="resources-audio"></div>
+        <div id="resources-images"></div>
+    </div>
+    <script>
+        loadScript([
+            "scripts/functions.js",
+            "scripts/functions.functions.js",
+            "scripts/functions.objects.js",
+            "scripts/input.js",
+            "scripts/settings.js",
+            "scripts/settings.settings.js",
+            "scripts/constants.js",
+            "scripts/data/cache.js",
+            "scripts/file.js",
+            "scripts/chat.js",
+            "scripts/ranks.js",
+            "scripts/entities.js",
+            "scripts/widgets.js",
+            "scripts/textbox.js",
+            "scripts/debugger.js",
+            "scripts/lighting.js",
+            "scripts/dex.js",
+            "scripts/data/dex-names.js",
+            "scripts/data/dex-dexes.js",
+            "scripts/data/regions.js",
+            "scripts/data/skins.js",
+            "scripts/data/types.js",
+            "scripts/libs/pixi.js",
+            "scripts/libs/platform.js",
+            "scripts/libs/webfont.js",
+            "scripts/libs/stats.js",
+			"scripts/libs/three.js",
+            "scripts/game.js"
+        ], function() {
+            setTimeout(function() {
+                document.getElementById("progress-container").style.opacity = 0;
+                Game.init();
+            }, 500);
+        });
+    </script>
+    <div id="login-container" style="left: 760px; top: 234px;">Welcome to <b>Pokéngine</b>. To get started, log in using your credentials below. Press [enter] when you"re done!
+        <div id="login-error">...</div>
+        <input id="login-username" value="develix" maxlength="16">
+        <input id="login-password" type="password" value="test">
+    </div>
+</body>
+
+</html>

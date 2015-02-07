@@ -1,0 +1,220 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+body {
+	background: hsl(0, 0%, 12%);
+	color: white;
+	font: 200 12pt "Helvetica Neue";
+	-webkit-user-select: none;
+}
+.centre {
+	position: absolute;
+	left: 50%; top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+canvas {
+	display: block;
+	box-shadow: hsla(0, 0%, 0%, 0.4) 0 4px 16px;
+}
+.hover {
+	cursor: pointer;
+}
+.hidden {
+	display: none;
+}
+select {
+	border: none;
+	outline: none;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	background: transparent;
+	font: inherit;
+	color: inherit;
+	border-bottom: 1px dashed currentcolor;
+	cursor: pointer;
+}
+span {
+	-webkit-user-select: auto;
+}
+button {
+	width: 80pt; height: 24pt;
+	color: black;
+	background: hsl(0, 0%, 70%);
+	border: none;
+	outline: none;
+	margin: 20pt 0;
+	cursor: pointer;
+	font: normal 12pt "Helvetica Neue";
+	-webkit-user-select: none;
+}
+button.small {
+	width: 40pt;
+	font-size: 16pt;
+}
+button:hover {
+	background: hsl(0, 0%, 80%);
+}
+button:active {
+	background: hsl(0, 0%, 40%);
+}
+button:disabled {
+	cursor: default;
+	background: hsl(0, 0%, 30%);
+}
+button.active {
+	background: hsl(150, 100%, 40%);
+}
+/*button.active:hover {
+	background: hsl(0, 100%, 40%);
+}*/
+.select {
+	position: relative;
+	font: normal 12pt "Helvetica Neue";
+	-webkit-user-select: none;
+	display: inline-block;
+	color: inherit;
+	font-weight: 200;
+}
+/*.select::after {
+	content: "▼";
+	font-size: 10pt;
+	position: absolute;
+	right: 4pt;
+	top: 6pt;
+	pointer-events: none;
+}*/
+input[type="text"] {
+	border: 1px dashed currentcolor;
+	outline: none;
+	width: 100pt;
+	height: 24pt;
+	color: inherit;
+	background: transparent;
+	font: normal 12pt "Helvetica Neue";
+	padding: 6pt;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+	width: 200pt;
+}
+li {
+	position: relative;
+	padding: 4pt 8pt;
+	background: hsl(150, 100%, 40%);
+	color: black;
+	min-height: 24pt;
+}
+.zebra li:nth-child(even) {
+	background: hsl(150, 100%, 35%);
+}
+li button {
+	position: absolute;
+	margin: 0;
+	right: 8pt;
+	height: 16pt;
+	background: hsl(150, 100%, 30%);
+}
+li.active {
+	background: hsl(0, 0%, 90%);
+}
+li.active button {
+	background: hsl(0, 0%, 80%);
+}
+li button:hover {
+	background: hsl(150, 100%, 50%);
+}
+li.active button:hover {
+	background: hsl(0, 0%, 100%);
+}
+li button:disabled {
+	background: hsl(150, 100%, 40%);
+}
+li.active button:disabled {
+	background: hsl(0, 0%, 90%);
+}
+li input[type="text"] {
+	width: 40pt;
+	font-weight: 200;
+	color: inherit;
+	text-align: right;
+}
+
+.issue {
+	position: absolute;
+	z-index: 1;
+	background: hsl(0, 60%, 50%);
+	padding: 4pt 8pt;
+	box-shadow: hsla(0, 0%, 0%, 0.4) 0 4px 16px;
+}
+.issue::before {
+	content: "";
+	position: absolute;
+	border-right: hsl(0, 60%, 50%) 4pt solid;
+	border-top: transparent 4pt solid;
+	border-bottom: transparent 4pt solid;
+	border-left: none;
+	right: 100%; top: 50%; margin-top: -4pt;
+}
+
+.popup {
+	position: absolute;
+	width: 240pt;
+	padding: 4pt 8pt;
+	color: black;
+	text-align: center;
+	z-index: 2;
+	background: hsl(0, 0%, 90%);
+	box-shadow: hsla(0, 0%, 0%, 0.4) 0 4px 16px;
+}
+.popup::after {
+	position: absolute;
+	content: "";
+	top: 100%;
+	left: 50%; margin-left: -20pt;
+	border: transparent 20pt solid;
+	border-top: hsl(0, 0%, 90%) 20pt solid;
+	border-bottom: none;
+}
+.popup.below::after {
+	top: 0%;
+	margin-top: calc(-20pt + 1px);
+	border-bottom: hsl(0, 0%, 90%) 20pt solid;
+	border-top: none;
+}
+.popup button {
+	margin-top: 10pt;
+	margin-bottom: 4pt;
+}
+table {
+	width: 100%;
+	table-layout: fixed;
+	border-spacing: 0;
+	text-align: center;
+}
+tr {
+	text-align: left;
+}
+td:first-of-type {
+	width: 80pt;
+}
+td:last-of-type::before {
+	content: ":";
+	margin-right: 20pt;
+}
+tr:not(:last-of-type) td:last-of-type::after {
+	content: ",";
+}
+table:not(:last-of-type) tr:last-of-type td {
+	padding-bottom: 16pt;
+	border-bottom: hsl(0, 0%, 20%) solid 1px;
+}
+caption {
+	position: relative;
+	top: -8pt;
+}
+caption span {
+	padding: 0 4pt;
+	background: hsl(0, 0%, 90%);
+}
